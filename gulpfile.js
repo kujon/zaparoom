@@ -23,7 +23,7 @@ gulp.task('lint', function () {
 });
 
 // Check code style
-gulp.task('style', function () {
+gulp.task('swag', function () {
     return gulp
         .src(paths.APP_FILES)
         .pipe(jscs())

@@ -4,7 +4,7 @@
   "description": "zaparoom main repository",
   "main": "web/bootstrap_es6.js",
   "scripts": {
-    "pretest": "./node_modules/.bin/gulp lint style",
+    "pretest": "./node_modules/.bin/gulp lint swag",
     "test": "./node_modules/.bin/gulp test",
     "posttest": "cat $CIRCLE_ARTIFACTS/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "postinstall": "./node_modules/.bin/gulp"
