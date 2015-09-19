@@ -4,7 +4,7 @@
   "description": "zaparoom main repository",
   "main": "web/bootstrap_es6.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha",
+    "test": "node_modules/.bin/mocha --compilers js:babel/register --recursive",
     "postinstall": "node_modules/.bin/gulp"
   },
   "author": "Jakub Korzeniowski",
