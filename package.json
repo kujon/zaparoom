@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "./node_modules/.bin/gulp lint style",
     "test": "./node_modules/.bin/gulp test",
-    "posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "posttest": "cat $CIRCLE_ARTIFACTS/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "postinstall": "./node_modules/.bin/gulp"
   },
   "author": "Jakub Korzeniowski",
