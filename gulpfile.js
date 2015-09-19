@@ -27,7 +27,7 @@ gulp.task('style', function () {
     return gulp
         .src(paths.APP_FILES)
         .pipe(jscs())
-        .on('error', () => {})
+        .on('error', function () {})
         .pipe(jsccsstylish());
 });
 
