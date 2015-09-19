@@ -1,8 +1,6 @@
 import { IO } from 'ramda-fantasy';
 
 //  $ :: String -> IO [DOM]
-var $ = function(selector) {
-    return new IO(function(){ return document.querySelectorAll(selector); });
-};
+var $ = selector => new IO(() => document.querySelectorAll(selector));
 
 export { $ };
