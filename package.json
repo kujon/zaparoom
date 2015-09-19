@@ -4,9 +4,10 @@
   "description": "zaparoom main repository",
   "main": "web/bootstrap_es6.js",
   "scripts": {
-    "pretest": "node_modules/.bin/gulp lint style",
-    "test": "node_modules/.bin/gulp test",
-    "postinstall": "node_modules/.bin/gulp"
+    "pretest": "./node_modules/.bin/gulp lint style",
+    "test": "./node_modules/.bin/gulp test",
+    "posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "postinstall": "./node_modules/.bin/gulp"
   },
   "author": "Jakub Korzeniowski",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
     "chai": "^3.2.0",
+    "coveralls": "^2.11.4",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-browserify": "^0.5.1",
