@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import { $ } from '../../../web/utils/dom';
-import { IO } from 'ramda';
 
 describe('./web/utils/dom', () => {
 
