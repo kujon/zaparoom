@@ -53,8 +53,7 @@ gulp.task('test', ['istanbul'], function () {
         }))
         .pipe(istanbul.writeReports({
             dir: process.env.CIRCLE_ARTIFACTS || './coverage',
-            reportOpts: {dir: process.env.CIRCLE_ARTIFACTS || './coverage'},
-            reporters: ['lcovonly']
+            reportOpts: {dir: process.env.CIRCLE_ARTIFACTS || './coverage'}
         }));
 });
 
