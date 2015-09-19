@@ -11,7 +11,8 @@ var isparta         = require('isparta');
 
 var paths = {
     APP_FILES: ['web/**/*.js', 'worker/**/*.js', '!**/bootstrap_es6.js'],
-    TEST_FILES: ['test/**/*.js']
+    TEST_FILES: ['test/**/*.js'],
+    COVERAGE: process.env.CIRCLE_ARTIFACTS || './coverage'
 };
 
 // Lints all javascript files using JSHint.
@@ -52,8 +53,8 @@ gulp.task('test', ['istanbul'], function () {
             reporter: 'nyan'
         }))
         .pipe(istanbul.writeReports({
-            dir: process.env.CIRCLE_ARTIFACTS || './coverage',
-            reportOpts: {dir: process.env.CIRCLE_ARTIFACTS || './coverage'}
+            dir: paths.COVERAGE,
+            reportOpts: {dir: paths.COVERAGE}
         }));
 });
 
