@@ -1,6 +1,8 @@
 import core from './core';
+import api from './api';
 
-export default function setup(app) {
+export default function setup(context) {
     // Setup all routes.
-    core(app);
+    core(context);
+    api(context);
 }

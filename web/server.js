@@ -5,6 +5,7 @@ installJSX();
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import routes from './ui/routes/setup';
 
 // Configure the port to listen on.
@@ -19,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'build')));
 // Use the body parser as the middleware
 app.use(bodyParser.urlencoded({extended: false}));
+// Set up gzip.
+app.use(compression());
 // Set view path
 app.set('views', path.join(__dirname, 'views'));
 // Set ejs as templating engine.
