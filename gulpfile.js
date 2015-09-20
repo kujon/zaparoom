@@ -70,6 +70,4 @@ gulp.task('bundle', function () {
         .pipe(gulp.dest('./web/build/js/'));
 });
 
-gulp.task('default', function () {
-    return;
-});
+gulp.task('default', ['bundle']);
