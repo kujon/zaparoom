@@ -8,5 +8,5 @@ export default function setup(app) {
     users(router);
 
     // Prefix all API routes with REST
-    app.use('/REST', router);
+    app.use(router);
 }

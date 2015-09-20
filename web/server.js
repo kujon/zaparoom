@@ -6,6 +6,7 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import morgan from 'morgan';
 import routes from './ui/routes/setup';
 
 // Configure the port to listen on.
@@ -19,9 +20,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Enable access to static assets in web/build as well
 app.use(express.static(path.join(__dirname, 'build')));
 // Use the body parser as the middleware
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 // Set up gzip.
 app.use(compression());
+// Set up logging.
+app.use(morgan('dev'));
 // Set view path
 app.set('views', path.join(__dirname, 'views'));
 // Set ejs as templating engine.

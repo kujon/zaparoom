@@ -1,8 +1,11 @@
+import { formatResponse } from '../../../utils/http';
+
 export default function setup(context) {
     context.route('/users')
         // Gets the list of users.
         .get((req, res) => {
-
+            const data = {text: 'Hey!'};
+            formatResponse(data, req, res);
         })
         // Creates a new user.
         .post((req, res) => {
