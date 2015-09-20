@@ -29,7 +29,9 @@ gulp lint swag
 ```
 ### Build
 ```
+gulp bundle
 ```
 ### Run
 ```
+npm start
 ```

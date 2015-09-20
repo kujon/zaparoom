@@ -8,9 +8,11 @@ var jsccsstylish    = require('gulp-jscs-stylish');
 var mocha           = require('gulp-mocha');
 var istanbul        = require('gulp-istanbul');
 var isparta         = require('isparta');
+var browserify      = require('gulp-browserify');
 
 var paths = {
-    APP_FILES: ['web/**/*.js', 'worker/**/*.js', '!**/bootstrap_es6.js'],
+    APP_FILES: ['web/**/*.js', 'worker/**/*.js', '!**/bootstrap_es6.js', '!**/build/**/*.js'],
+    UI_ENTRY: 'web/ui/main.js',
     TEST_FILES: ['test/**/*.js'],
     COVERAGE: process.env.CIRCLE_ARTIFACTS || './coverage'
 };
@@ -56,6 +58,16 @@ gulp.task('test', ['istanbul'], function () {
             dir: paths.COVERAGE,
             reportOpts: {dir: paths.COVERAGE}
         }));
+});
+
+// Bundle js files together.
+gulp.task('bundle', function () {
+    gulp.src(paths.UI_ENTRY)
+        .pipe(browserify({
+            debug: true,
+            transform: ['babelify', 'reactify']
+        }))
+        .pipe(gulp.dest('./web/build/js/'));
 });
 
 gulp.task('default', function () {
