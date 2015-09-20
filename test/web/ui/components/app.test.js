@@ -5,7 +5,7 @@ import App from '../../../../web/ui/components/app';
 describe('./web/ui/components/app', () => {
 
     it('should render h1 element', () => {
-        var html = renderToString(App, {});
+        var html = renderToString(App, {}, null, null);
         expect(html).to.match(/^\<h1(.+)\<\/h1\>$/);
     });
 
