@@ -2,6 +2,6 @@ import React from 'react/addons';
 
 export default React.createClass({
     render: () => {
-        return React.createElement('h2', null, 'Coming soon!');
+        return React.createElement('h1', null, 'Coming soon!');
     }
 });
