@@ -1,12 +1,12 @@
 import { DEFAULT_QUEUE } from './constants';
-import { Rouge, defaultExchange, queue, consume } from './utils/rouge';
+import { Rogue, defaultExchange, queue, consume } from './utils/rogue';
 import handleDefault from './default/handle';
 
-// rouge :: JackRabbit
-const rouge = Rouge(process.env.RABBIT_URL);
+// rogue :: JackRabbit
+const rogue = Rogue(process.env.RABBIT_URL);
 
 // exchange :: Exchange
-const exchange = defaultExchange(rouge);
+const exchange = defaultExchange(rogue);
 
 // defaultQueue :: Queue
 const defaultQueue = queue({name: DEFAULT_QUEUE}, exchange);
