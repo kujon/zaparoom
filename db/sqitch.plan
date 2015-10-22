@@ -2,3 +2,4 @@
 %project=zaparoom
 
 appschema 2015-10-22T12:20:10Z kujon <jakub.korzeniowski@gmail.com> # Add schema for all flipr objects.
+users [appschema] 2015-10-22T12:32:18Z kujon <jakub.korzeniowski@gmail.com> # Table for all users
